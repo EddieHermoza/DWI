@@ -1,0 +1,137 @@
+@tailwind base; 
+
+@tailwind components; 
+
+@tailwind utilities;
+
+@font-face {
+    font-family: font-aorus;
+    src: url(../fonts/Aldrich-Regular.woff2);
+}
+
+@layer base {
+  body {
+    font-family: font-aorus, sans-serif;
+    @apply overflow-x-hidden
+  }
+}
+
+@layer components{
+    .animation-underline{
+        @apply absolute inset-x-0 bottom-0 h-0.5 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100
+    }
+    .file-select {
+        @apply transform duration-500 before:bg-orange-500  before:rounded-tl-lg before:rounded-br-lg
+    }
+  
+    .truncate-multiline {
+        @apply overflow-ellipsis overflow-hidden ;
+        max-height: 6em; 
+    }
+}
+
+
+.file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'Seleccionar archivo'; 
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  display: inline-block;
+}
+
+.file-select:hover{
+  filter: saturate(2);
+}
+
+
+.glide__arrow {
+  position: absolute;
+  display: block;
+  top: 50%;
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.glitch p:nth-child(1) {
+  color: white;
+  animation: glitch 2s infinite forwards
+}
+.glitch p:nth-child(2) {
+  color: white;
+  animation: glitchTwo 1.5s infinite forwards
+}
+.glitch p:nth-child(3) {
+  color: white;
+  animation: glitchThree 1s infinite forwards
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0, 0);
+    clip-path: polygon(19% 74%, 75% 84%, 75% 100%, 0% 100%);
+  }
+  5% {
+    transform: translate(10px, 0);
+    clip-path: polygon(100% 0%, 100% 0%, 5% 50%, 0% 10%);
+  }
+  10% {
+    transform: translate(0, 0);
+    clip-path: polygon(3% 100%, 100% 53%, 12% 12%, 0% 3%);
+  }
+  15% {
+    transform: translate(10px, 10px);
+    clip-path: polygon(39% 43%, 50% 19%, 15% 22%, 20% 40%);
+  }
+  20% {
+    transform: translate(-10px, -10px);
+    clip-path: polygon(100% 54%, 22% 25%, 33% 54%, 34% 97%);
+  }
+  25% {
+    transform: translate(0, 0);
+    clip-path: polygon(19% 74%, 75% 84%, 75% 100%, 0% 100%);
+  }
+}
+
+@keyframes glitchTwo {
+  0% {
+    transform: translate(20px, 0);
+    clip-path: polygon(22% 0%, 0% 84%, 0% 50%, 0% 0%);
+  }
+  3% {
+    transform: translate(0, 10px);
+    clip-path: polygon(0% 10%, 50% 32%, 54% 2%, 10% 100%);
+  }
+  8% {
+    transform: translate(0, 0);
+    clip-path: polygon(3% 0%, 54% 53%, 0% 12%, 0% 30%);
+  }
+  12% {
+    transform: translate(-10px, 10px);
+    clip-path: polygon(0% 23%, 50% 0%, 15% 22%, 0% 40%);
+  }
+  18% {
+    transform: translate(-10px, 10px);
+    clip-path: polygon(0% 0%, 19% 25%, 22% 54%, 0% 97%);
+  }
+  30% {
+    transform: translate(0, 0);
+    clip-path: polygon(22% 0%, 0% 84%, 0% 50%, 0% 0%);
+  }
+}
