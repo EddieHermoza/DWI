@@ -3,7 +3,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ["./**/*.jsp"], // Ruta a todos los archivos JSP desde la raíz del proyecto
+  content: ["./**/*.jsp"], 
   theme: {
     extend: {
       colors: {

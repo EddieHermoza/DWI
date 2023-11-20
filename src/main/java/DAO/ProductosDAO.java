@@ -422,4 +422,132 @@ public class ProductosDAO extends Conexion{
         }
         return cantidad;
     }
+    
+    public ArrayList<Producto> ProductosParecidos(int id_Categoria,int id_producto) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs=null;
+        Connection con = getConnection();
+        try {
+                ps = con.prepareStatement("SELECT * FROM Productos WHERE categoria_id = ? AND estado = 'habilitado' AND cantidad > 0 AND id NOT IN (?) LIMIT 3");
+                ps.setInt(1, id_Categoria);
+                ps.setInt(2, id_producto);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    Producto producto = new Producto();
+                    producto.setId(rs.getInt("id"));
+                    producto.setNombre(rs.getString("nombre"));
+                    producto.setDescripcion(rs.getString("descripcion"));
+                    producto.setPrecio(rs.getDouble("precio"));
+                    producto.setMarca(rs.getInt("marca_id"));
+                    producto.setCategoria(rs.getInt("categoria_id"));
+                    producto.setImg(rs.getString("img"));
+                    producto.setCantidad(rs.getInt("cantidad"));
+                    producto.setDescuento(rs.getDouble("descuento"));
+                    producto.setEstado(rs.getString("estado"));
+                    producto.setEspecificaciones(rs.getString("especificaciones"));
+                    productos.add(producto);
+                }
+             return productos;
+             
+        } catch (SQLException e) {
+            
+            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            return productos;
+            
+        } finally{     
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+            }
+        }
+    }
+    
+    public ArrayList<Producto> ProductosMasVendidos() {
+        ArrayList<Producto> productos = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs=null;
+        Connection con = getConnection();
+        try {
+                ps = con.prepareStatement("SELECT p.id, p.nombre, p.descripcion, p.precio, p.marca_id, p.categoria_id, p.especificaciones, p.img, p.cantidad, p.descuento, p.estado\n" +
+                                            "FROM productos p\n" +
+                                            "JOIN (\n" +
+                                            "    SELECT producto_id, SUM(cantidad) AS Tvendido\n" +
+                                            "    FROM venta_detalle\n" +
+                                            "    GROUP BY producto_id\n" +
+                                            "    ORDER BY Tvendido DESC\n" +
+                                            "    LIMIT 10\n" +
+                                            ") vd ON p.id = vd.producto_id\n" +
+                                            "WHERE p.cantidad > 0 AND p.estado = 'habilitado'");
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    Producto producto = new Producto();
+                    producto.setId(rs.getInt("id"));
+                    producto.setNombre(rs.getString("nombre"));
+                    producto.setDescripcion(rs.getString("descripcion"));
+                    producto.setPrecio(rs.getDouble("precio"));
+                    producto.setMarca(rs.getInt("marca_id"));
+                    producto.setCategoria(rs.getInt("categoria_id"));
+                    producto.setImg(rs.getString("img"));
+                    producto.setCantidad(rs.getInt("cantidad"));
+                    producto.setDescuento(rs.getDouble("descuento"));
+                    producto.setEstado(rs.getString("estado"));
+                    producto.setEspecificaciones(rs.getString("especificaciones"));
+                    productos.add(producto);
+                }
+             return productos;
+             
+        } catch (SQLException e) {
+            
+            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            return productos;
+            
+        } finally{     
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+            }
+        }
+    }
+    
+    public ArrayList<Producto> ProductosUltimos() {
+        ArrayList<Producto> productos = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs=null;
+        Connection con = getConnection();
+        try {
+                ps = con.prepareStatement("SELECT * FROM Productos WHERE estado = 'habilitado' AND cantidad > 0 ORDER BY id DESC LIMIT 10");
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    Producto producto = new Producto();
+                    producto.setId(rs.getInt("id"));
+                    producto.setNombre(rs.getString("nombre"));
+                    producto.setDescripcion(rs.getString("descripcion"));
+                    producto.setPrecio(rs.getDouble("precio"));
+                    producto.setMarca(rs.getInt("marca_id"));
+                    producto.setCategoria(rs.getInt("categoria_id"));
+                    producto.setImg(rs.getString("img"));
+                    producto.setCantidad(rs.getInt("cantidad"));
+                    producto.setDescuento(rs.getDouble("descuento"));
+                    producto.setEstado(rs.getString("estado"));
+                    producto.setEspecificaciones(rs.getString("especificaciones"));
+                    productos.add(producto);
+                }
+             return productos;
+             
+        } catch (SQLException e) {
+            
+            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            return productos;
+            
+        } finally{     
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+            }
+        }
+    }
 }

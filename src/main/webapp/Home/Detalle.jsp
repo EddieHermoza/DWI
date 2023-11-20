@@ -15,6 +15,7 @@
     ProductosDAO produDAO = new ProductosDAO();
 
     Producto produ=produDAO.ObtenerProducto(id);
+    ArrayList<Producto> productosParecidos = produDAO.ProductosParecidos(produ.getCategoria(),produ.getId());
     Marca marca=mDAO.ObtenerMarca(produ.getMarca());
 %>
 <jsp:include page="../Templates/Head.jsp"/> 
@@ -64,22 +65,17 @@
         <section class="mt-[120px] flex flex-col items-center gap-7 justify-center">
             <h2 class="text-5xl text-center text-[rgb(255,100,0)] p-2">Otros Productos parecidos</h2>
             <div class="container flex flex-wrap justify-center items-center gap-5">
-                <div class="filter hover:saturate-200 bg-stone-950 relative rounded-md flex flex-col items-center justify-between  border h-[500px] w-[400px]">
-                    <img src="../images/Monitor.png" alt="">
-                    <span class="text-2xl text-white truncate text-center p-2">Otro Producto</span>
-                    <a class="relative flex justify-center items-center border w-full p-2 text-xl text-white transform duration-300 hover:bg-rojo-rgb" href="Detalle.jsp">Ver más...</a>
-                </div>
-                <div class="filter hover:saturate-200 bg-stone-950 relative rounded-md flex flex-col items-center justify-between  border h-[500px] w-[400px]">
-                    <img src="../images/Monitor.png" alt="">
-                    <span class="text-2xl text-white truncate text-center p-2">Otro Producto</span>
-                    <a class="relative flex justify-center items-center border w-full p-2 text-xl text-white transform duration-300 hover:bg-rojo-rgb" href="Detalle.jsp">Ver más...</a>
-                </div>
-                <div class="filter hover:saturate-200 bg-stone-950 relative rounded-md flex flex-col items-center justify-between border h-[500px] w-[400px]">
-                    <img src="../images/Monitor.png" alt="">
-                    <span class="text-2xl text-white truncate text-center p-2">Otro Producto</span>
-                    <a class="relative flex justify-center items-center border w-full p-2 text-xl text-white transform duration-300 hover:bg-rojo-rgb" href="Detalle.jsp">Ver más...</a>
-                </div>
-
+            <% if(!productosParecidos.isEmpty()) { %>
+                <% for(Producto p: productosParecidos) { %>
+                    <div class="filter hover:saturate-200 bg-stone-950 relative rounded-md flex flex-col items-center justify-between  border h-[500px] w-[400px]">
+                        <img src="<%= p.getImg() %>" alt="">
+                        <span class="text-2xl text-white truncate text-center p-2"><%= p.getNombre() %></span>
+                        <a class="relative flex justify-center items-center border w-full p-2 text-xl text-white transform duration-300 hover:bg-[rgb(255,100,0)]" href="Detalle.jsp&id=<%= p.getId() %>">Ver más...</a>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <span class="text-2xl text-white w-full text-center">No hay Otros Productos Parecidos Disponibles :[</span>
+            <% } %>
             </div>
         </section>
     </main>

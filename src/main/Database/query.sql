@@ -45,7 +45,8 @@ producto_id bigint NOT NULL,
 cliente_id bigint NOT NULL,
 comentario text NOT NULL,
 calificacion int not null,
-fecha date not null
+fecha date not null,
+estado varchar(50) not null
 );
 
 CREATE TABLE combos(

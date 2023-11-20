@@ -9,6 +9,7 @@
         <p class="text-white text-base w-full max-h-[100px] overflow-y-hidden " >${param.descripcion}</p>
     </div>
     <div class="relative flex justify-center items-center gap-x-3 p-2">
-        <a href="Detalle.jsp?id=${param.id}" class="text-white border rounded-tl-md rounded-br-md flex items-center justify-center hover:bg-rojo-rgb hover:text-white transform duration-200 p-2 whitespace-nowrap">Ver detalles</a>     
+        <a href="Detalle.jsp?id=${param.id}" class="text-white border rounded-tl-md rounded-br-md flex items-center justify-center hover:bg-rojo-rgb hover:text-white transform duration-200 p-2 whitespace-nowrap">Ver detalles</a>
+        <button data-producto="${param.id}" type="submit" class="carrito-boton text-white border text-xl hover:bg-cyan-400 flex items-center justify-center hover:text-black transform duration-200 p-2"><i class='bx bx-cart-alt'></i></button>     
     </div>
 </div>

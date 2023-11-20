@@ -3,6 +3,7 @@ C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Con
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Controlador\ctrlProductos.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Modelos\Producto.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\DAO\ProductosDAO.java
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\DAO\ComentariosDAO.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\DAO\MarcasDAO.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Controlador\ctrlPago.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Controlador\ctrlCarrito.java
@@ -19,6 +20,7 @@ C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\DAO
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Controlador\ctrlInventario.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Modelos\Carro.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Modelos\Venta.java
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Modelos\Comentario.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Modelos\Marca.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Modelos\Categoria.java
 C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java\Controlador\ctrlGraficas.java

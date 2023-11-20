@@ -1,4 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="Modelos.Carro" %>
+
+<%
+    Carro c = (Carro) session.getAttribute("carro");
+    if(c == null){
+        response.sendRedirect("../index.jsp");
+        return;
+    }
+%>
+
 <jsp:include page="../Templates/Head.jsp"/> 
 
         <jsp:include page="Components/NavClient.jsp"/>

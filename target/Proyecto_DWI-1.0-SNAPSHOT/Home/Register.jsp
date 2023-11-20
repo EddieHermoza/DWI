@@ -13,31 +13,31 @@
 
             <form action="../ctrlRegister" method="POST" class="h-auto w-auto bg-stone-950 bg-opacity-90 flex flex-col">
                 <jsp:include page="Components/Glitch.jsp"/> 
-                <div class="flex flex-col space-y-5 p-6">
-                    <div class="flex flex-col space-y-2">
-                        <label for="" class="text-white text-xl">Nombres</label>
+                <div class="flex flex-col gap-5 p-6">
+                    <div class="flex flex-col gap-1">
+                        <label for="" class="text-white">Nombres</label>
                         <input type="text" name="nombresRegister" class="w-full text-white h-[40px] outline-none bg-stone-900 focus:bg-black border border-stone-900 p-2 focus:border-[rgb(255,100,0)] transform duration-300">    
                     </div>
-                    <div class="flex flex-col space-y-2">
-                        <label for="" class="text-white text-xl">Apellidos</label>
+                    <div class="flex flex-col gap-1">
+                        <label for="" class="text-white">Apellidos</label>
                         <input type="text" name="apellidosRegister" class="w-full text-white h-[40px] outline-none bg-stone-900 focus:bg-black border border-stone-900 p-2 focus:border-[rgb(255,100,0)] transform duration-300">    
                     </div>
-                    <div class="flex flex-col space-y-2">
-                        <label for="" class="text-white text-xl">Correo Electrónico</label>
+                    <div class="flex flex-col gap-1">
+                        <label for="" class="text-white">Correo Electrónico</label>
                         <input type="email" name="correoRegister" class="w-full text-white h-[40px] outline-none bg-stone-900 focus:bg-black border border-stone-900 p-2 focus:border-[rgb(255,100,0)] transform duration-300">    
                     </div>
-                    <div class="flex flex-col space-y-2">
-                        <label for="" class="text-white text-xl">Número Telefonico</label>
+                    <div class="flex flex-col gap-1">
+                        <label for="" class="text-white">Número Telefonico</label>
                         <input type="text" name="numeroRegister" class="w-full text-white h-[40px] outline-none bg-stone-900 focus:bg-black border border-stone-900 p-2 focus:border-[rgb(255,100,0)] transform duration-300">    
                     </div>
-                    <div class="flex flex-col space-y-2">
-                        <label for="" class="text-white text-xl">Contraseña</label>
+                    <div class="flex flex-col gap-1">
+                        <label for="" class="text-white">Contraseña</label>
                         <input type="password" name="contraRegister" class="w-full text-white  h-[40px] outline-none bg-stone-900 focus:bg-black border border-stone-900 p-2 focus:border-[rgb(255,100,0)] transform duration-300">
                     </div>
                     <% if (err != null && !err.isBlank()) { %>
-                        <span class="w-full text-center text-base text-red-600"><%= err %></span>
+                        <span class="w-full text-center text-xs text-red-600"><%= err %></span>
                     <% } %>
-                    <div class="flex pt-7 items-center justify-between space-x-5">
+                    <div class="flex pt-5 items-center justify-between gap-5">
                         <a href="Login.jsp" class="text-black text-center whitespace-nowrap bg-white border w-1/2 flex items-center justify-center rounded-tl-lg p-2 rounded-br-xl h-[50px] hover:bg-black hover:text-white transform duration-200">INICIAR SESIÓN</a>
                         <input type="submit" value="REGISTRARSE" class="cursor-pointer text-white flex items-center w-1/2 justify-center rounded-tl-lg p-2 rounded-br-xl bg-red-600 h-[50px] hover:bg-cyan-400 hover:text-black transform duration-200">
                     </div>

@@ -2,7 +2,7 @@
 <%
   String url = request.getContextPath(); 
 %>
-<section class="relative w-[260px] hidden lg:flex">
+<section class="relative w-[260px] hidden lg:flex" >
     <div class="sticky top-[5%] w-[260px] h-[800px] bg-black px-2">
         <ul class="w-full text-xl text-white flex flex-col items-center border-[rgb(255,100,0)] border">
             <li class=" w-full h-[80px]">
