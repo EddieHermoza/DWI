@@ -8,6 +8,10 @@ public class Comentario {
     private int producto;
     private String fecha;
     private String mensaje;
+    private String estado;
+    private String productoURL;
+    private String productoNombre;
+    private String nombreCliente;
 
     public Comentario() {
     }
@@ -50,6 +54,38 @@ public class Comentario {
 
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getProductoURL() {
+        return productoURL;
+    }
+
+    public void setProductoURL(String productoURL) {
+        this.productoURL = productoURL;
+    }
+
+    public String getProductoNombre() {
+        return productoNombre;
+    }
+
+    public void setProductoNombre(String productoNombre) {
+        this.productoNombre = productoNombre;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
     }
     
     

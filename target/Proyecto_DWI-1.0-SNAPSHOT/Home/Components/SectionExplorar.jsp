@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <section id="Explorar" class="mt-[140px] flex justify-center ">
-    <div class="flex flex-col space-y-4 justify-center lg:px-10 xl:px-20">
+    <div class="flex flex-col gap-5 justify-center">
         <div class="relative flex flex-col items-center justify-center text-center">
             <h2 class="max-sm:text-3xl sm:text-5xl text-white">EXPLORAR</h2>
             <p class="max-sm:text-base sm:text-xl text-slate-400 text-center p-2">Nuestra excelencia como tienda se refleja en lo que le ofrecemos a los clientes.</p>
         </div>
-        <div class="grid grid-rows-6 gap-2 md:grid-rows-4 h-[1300px] w-auto">
+        <div class="grid grid-rows-6 gap-2 md:grid-rows-4 h-[1300px] max-w-[1400px] w-full">
             <div class="row-span-3 gap-2 md:row-span-2 grid grid-rows-3 md:grid-rows-none md:grid-cols-4 ">
                 <div class="col-span-3 gap-2 md:col-span-2 grid row-span-2 md:row-span-3 md:grid-rows-2">
                     <jsp:include page="SectionExplorarCard.jsp">

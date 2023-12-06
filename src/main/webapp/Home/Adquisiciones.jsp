@@ -13,7 +13,7 @@
         <section class="mt-[100px] flex flex-col items-center">
             <h2 class="text-5xl mb-5 text-white px-5 text-center w-full">Ultimas Adquisiciones</h2>
             <p class="text-xl text-slate-400 px-5 mb-5 w-full text-center">Donde mostramos lo último... hasta que llegue algo nuevo y mejor</p>
-            <div class=" max-sm:w-full sm:container max-w-[1400px] grid max-md:grid-cols-1 md:grid-cols-2 grid-flow-row justify-center max-sm:px-5 sm:px-10 transition-all duration-300">
+            <div class=" w-full max-w-[1200px] grid max-md:grid-cols-1 md:grid-cols-2 grid-flow-row justify-center max-sm:px-5 sm:px-10 transition-all duration-300 gap-5">
                 <% if(productos.isEmpty()){%>
                 <span class="text-4xl text-white text-center">No hay Productos Disponibles en este momento :[</span>
                 <% } else { %>

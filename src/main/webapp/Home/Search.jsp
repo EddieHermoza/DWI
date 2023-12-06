@@ -20,7 +20,7 @@
                 <form action="Search.jsp" method="post" class="flex justify-center w-full ">
                     <input type="text" class="outline-none bg-stone-900 border max-sm:w-4/5 sm:w-1/2  text-white focus:border-rojo-rgb transform duration-300 h-[40px] p-2" name="keyword">
                 </form>
-                <div class="flex flex-col items-center max-sm:w-full transition-all transform duration-300 sm:w-3/4 min-h-[70vh] bg-stone-950">
+                <div class="flex flex-col items-center w-full max-w-[1200px] transition-all transform duration-300  min-h-[70vh] bg-stone-950">
                     <% if(productos.isEmpty())  {%>
                         <p class="text-2xl text-center text-white">No se encontraron resultados</p>
                     <%} else {%>

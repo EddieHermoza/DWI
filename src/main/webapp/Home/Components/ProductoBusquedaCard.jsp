@@ -3,7 +3,7 @@
     <img src="${param.url}" alt="" width="220" height="240" class="">
     <div class="relative flex flex-col gap-3">
         <h3 class="text-white text-xl group-hover:text-orange-500 transform duration-300">${param.nombre}</h3>
-        <span class="text-white text-base group relative  group-hover:text-cyan-400 transform duration-300 w-full">Precio: $/${param.precio}
+        <span class="text-white text-base group relative  group-hover:text-cyan-400 transform duration-300 px-2 overflow-x-hidden">Precio: $/${param.precio}
             <span class="animation-underline bg-cyan-400"></span>
         </span>
         <p class="text-white text-base w-full max-h-[100px] overflow-y-hidden " >${param.descripcion}</p>

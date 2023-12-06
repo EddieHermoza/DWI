@@ -36,7 +36,7 @@
                                         <th scope="col" class=" p-5">Correo Electrónico</th>
                                         <th scope="col" class=" p-5">Contraseña</th>
                                         <th scope="col" class=" p-5">Telefono</th>
-                                        <th scope="col" class=" p-5">Puntos</th>
+                                        <th scope="col" class=" p-5"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-white">
@@ -53,7 +53,9 @@
                                             <td class="p-2 truncate max-w-[140px]"><%= clie.getCorreo() %></td>
                                             <td class="p-2 truncate max-w-[140px]"><%= clie.getContraseña() %></td>
                                             <td class="p-2 truncate max-w-[140px]"><%= clie.getTelefono() %></td>
-                                            <td class="p-2 truncate "><%= clie.getPuntos() %></td>
+                                            <td>
+                                                <a href="info.jsp?id=<%= clie.getId() %>" class="bg-warning filter hover:saturate-[3] text-black py-2 px-4 transform duration-200 rounded-tl-md rounded-br-md"><i class="fa-solid fa-eye"></i></a>   
+                                            </td>
                                         </tr>
                                     <% }
                                     }

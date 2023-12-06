@@ -48,6 +48,14 @@
         <servlet-name>ctrlGraficas</servlet-name>
         <servlet-class>Controlador.ctrlGraficas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ctrlComentarios</servlet-name>
+        <servlet-class>Controlador.ctrlComentarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlCliente</servlet-name>
+        <servlet-class>Controlador.ctrlCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ctrlMarcas</servlet-name>
         <url-pattern>/ctrlMarcas</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>ctrlGraficas</servlet-name>
         <url-pattern>/ctrlGraficas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlComentarios</servlet-name>
+        <url-pattern>/ctrlComentarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlCliente</servlet-name>
+        <url-pattern>/ctrlCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

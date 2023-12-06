@@ -28,7 +28,7 @@ public class UsuariosDAO extends Conexion{
             ps.execute();
             return true; 
         } catch (SQLException e) {
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
             return false;
             
         } finally{
@@ -36,7 +36,7 @@ public class UsuariosDAO extends Conexion{
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }
@@ -52,7 +52,7 @@ public class UsuariosDAO extends Conexion{
             ps.execute();
             return true; 
         } catch (SQLException e) {
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
             return false;
             
         } 
@@ -72,7 +72,7 @@ public class UsuariosDAO extends Conexion{
             ps.execute();
             return true;
         } catch (SQLException e) {
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
             return false;
             
         } finally{
@@ -80,7 +80,7 @@ public class UsuariosDAO extends Conexion{
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }
@@ -94,7 +94,7 @@ public class UsuariosDAO extends Conexion{
             ps.execute();
             return true;
         } catch (SQLException e) {
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
             return false;
             
         } finally{
@@ -102,7 +102,7 @@ public class UsuariosDAO extends Conexion{
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }       
@@ -130,14 +130,14 @@ public class UsuariosDAO extends Conexion{
              
         } catch (SQLException e) {
             
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
             return usuarios;
             
         } finally{     
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }
@@ -168,14 +168,14 @@ public class UsuariosDAO extends Conexion{
              
         } catch (SQLException e) {
             
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
             return clientes;
             
         } finally{     
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }
@@ -202,14 +202,14 @@ public class UsuariosDAO extends Conexion{
              
         } catch (SQLException e) {
             
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
             return usuarios;
             
         } finally{     
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }
@@ -239,7 +239,7 @@ public class UsuariosDAO extends Conexion{
             
         } catch (SQLException e) {
             
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
             return null;
             
         } finally {    
@@ -247,7 +247,7 @@ public class UsuariosDAO extends Conexion{
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
             
         }
@@ -275,7 +275,7 @@ public class UsuariosDAO extends Conexion{
             
         } catch (SQLException e) {
             
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
             return null;
             
         } finally {    
@@ -283,7 +283,7 @@ public class UsuariosDAO extends Conexion{
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
             
         }
@@ -312,14 +312,14 @@ public class UsuariosDAO extends Conexion{
              
         } catch (SQLException e) {
             
-            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
             return null;
             
         } finally{     
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
+                Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+ex);
             }
         }
     }
@@ -336,7 +336,7 @@ public class UsuariosDAO extends Conexion{
                 return  id;    
             }        
         } catch (SQLException e) {
-            Logger.getLogger(VentasDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
             return 0;
         }
         return 0;
@@ -354,8 +354,37 @@ public class UsuariosDAO extends Conexion{
                 cantidad=Integer.parseInt(rs.getString("cantidad"));
             }
         } catch (SQLException e) {
+           Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
             System.out.println(e);
         }
         return cantidad;
+    }
+    
+    public boolean ModificarCliente(Cliente clie) {
+        PreparedStatement ps = null;
+        Connection con = getConnection();
+        String sql = "UPDATE usuarios " +
+                     "JOIN clientes ON usuarios.id = clientes.usuario_id " +
+                     "SET usuarios.nombres =?, " +
+                     "    usuarios.apellidos =?, " +
+                     "    usuarios.email =?, " +
+                     "    usuarios.contraseña =?, " +
+                     "    clientes.telefono =? " +
+                     "WHERE usuarios.id =?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, clie.getNombres());
+            ps.setString(2, clie.getApellidos());
+            ps.setString(3, clie.getCorreo());
+            ps.setString(4, clie.getContraseña());
+            ps.setString(5, clie.getTelefono());
+            ps.setInt(6, clie.getId());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            Logger.getLogger(UsuariosDAO.class.getName()).log(Level.SEVERE, null, "Error: " + e); 
+            System.out.println(e);
+            return false;
+        } 
     }
 }

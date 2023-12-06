@@ -1,11 +1,13 @@
 
 package Controlador;
 
+import DAO.CategoriasDAO;
 import DAO.DetalleVentasDAO;
 import DAO.MarcasDAO;
 import DAO.ProductosDAO;
 import DAO.UsuariosDAO;
 import DAO.VentasDAO;
+import Modelos.Categoria;
 import Modelos.Marca;
 import Modelos.Producto;
 import Modelos.Venta;
@@ -33,6 +35,7 @@ import org.json.JSONObject;
 @MultipartConfig
 public class ctrlGraficas extends HttpServlet {
     ProductosDAO pdao=new ProductosDAO();
+    CategoriasDAO cdao=new CategoriasDAO();
     VentasDAO vdao=new VentasDAO();
     MarcasDAO mdao=new MarcasDAO();
     UsuariosDAO udao=new UsuariosDAO();
@@ -209,6 +212,99 @@ public class ctrlGraficas extends HttpServlet {
 
             response.setContentType("application/json");
             response.getWriter().write(jsonResponse.toString());
+        }
+        if (grafica.equals("chartVentaCategorias")) {
+            JSONArray vMLabels = new JSONArray();
+            JSONArray vMdata = new JSONArray();
+
+            ArrayList<Producto> produList = pdao.Listar();
+            ArrayList<Categoria> categoList=cdao.Listar();
+            ArrayList<Venta_Detalle> vdList = dvdao.Listar();
+
+            Map<Long, Double> categoGanancia = new HashMap<>();
+
+            for (Venta_Detalle detalle : vdList) {
+                long productoId = detalle.getProducto();
+                double ganancia = detalle.getSubtotal();
+                for (Producto producto : produList) {
+                    if (producto.getId() == productoId) {
+                        long categoriaID = producto.getCategoria();
+                        categoGanancia.put(categoriaID, categoGanancia.getOrDefault(categoriaID, 0.0) + ganancia);
+                        break;
+                    }
+                }
+            }
+
+            for (Categoria catego : categoList) {
+                long categoId = catego.getId();
+                vMLabels.put(catego.getNombre());
+                vMdata.put(categoGanancia.getOrDefault(categoId, 0.0));
+            }
+
+            JSONObject jsonResponse = new JSONObject();
+            jsonResponse.put("labels", vMLabels);
+            jsonResponse.put("data", vMdata);
+
+            response.setContentType("application/json");
+            response.getWriter().write(jsonResponse.toString());
+        }
+        
+        if (grafica.equals("chartVentasCliente")) {
+            String idString=request.getParameter("id");
+            int id =Integer.parseInt(idString);
+            JSONArray vfLabels = new JSONArray();
+            JSONArray vfData = new JSONArray();
+
+            Map<String, Double> MontosMes = new HashMap<>();
+            SimpleDateFormat fMes = new SimpleDateFormat("MMMM", new Locale("es", "ES"));
+
+            try {
+                ArrayList<Venta> listaVentas = vdao.ListarVentasCLiente(id);
+                SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+                Calendar calendario = Calendar.getInstance();
+                int añoActual = calendario.get(Calendar.YEAR);
+
+                ArrayList<String> mesesOrden = new ArrayList<>();
+                for (int mes = 1; mes <= 12; mes++) {
+                    Calendar fechaMes = Calendar.getInstance();
+                    fechaMes.set(Calendar.YEAR, añoActual);
+                    fechaMes.set(Calendar.MONTH, mes - 1);
+                    String nombreMes = fMes.format(fechaMes.getTime());
+                    mesesOrden.add(nombreMes);
+                }
+
+                for (Venta v : listaVentas) {
+                    Date d = formato.parse(v.getFecha());
+                    Calendar fechaVenta = Calendar.getInstance();
+                    fechaVenta.setTime(d);
+
+                    if (fechaVenta.get(Calendar.YEAR) == añoActual) {
+                        String nombreMes = fMes.format(d);
+                        Double ganancia = v.getMonto();
+                        MontosMes.put(nombreMes, MontosMes.getOrDefault(nombreMes, 0.0) + ganancia);
+                    }
+                }
+
+                for (String mes : mesesOrden) {
+                    vfLabels.put(mes);
+                    Double ganancia = MontosMes.get(mes);
+                    if (ganancia == null) {
+                        vfData.put(0.0);
+                    } else {
+                        vfData.put(ganancia);
+                    }
+                }
+
+                JSONObject jsonResponse = new JSONObject();
+                jsonResponse.put("año", añoActual);
+                jsonResponse.put("labels", vfLabels);
+                jsonResponse.put("data", vfData);
+                response.setContentType("application/json");
+                response.getWriter().write(jsonResponse.toString());
+            } catch (ParseException ex) {
+                Logger.getLogger(ctrlGraficas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
         }
     }
 

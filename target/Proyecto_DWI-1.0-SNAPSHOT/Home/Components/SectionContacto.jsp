@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<section id="Contacto" class="mt-[60px] filter saturate-150">
-    <div class="flex flex-col justify-center items-center">
-        <div class="w-full text-center mb-5 space-y-4">
+<section id="Contacto" class="mt-[60px] filter saturate-150 flex justify-center">
+    <div class="flex flex-col items-center justify-center w-full max-w-[1400px]">
+        <div class="w-full text-center mb-5 flex flex-col gap-5">
             <jsp:include page="Glitch.jsp"/> 
             <p class="text-2xl text-slate-400 p-2 font-light">"Donde la excelencia se convierte en tecnología"</p>    
             <ul class="flex flex-wrap w-full items-center justify-center gap-5 sm:text-xl text-white p-4">
@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </div>
-        <div class="grid gap-3 sm:gap-0 sm:grid-cols-2">
+        <div class="w-full grid gap-3 sm:gap-0 sm:grid-cols-2">
             <div class=" flex flex-col space-y-3 text-center">
                 <h2 class="text-white text-4xl">Contáctanos</h2>
                 <p class="px-8 text-slate-300 text-xl">¿Tienes alguna pregunta? Estamos aquí para ayudarte. En Paragon, damos la mejor atención y asesoramiento sobre nuestros productos</p>

@@ -4,24 +4,29 @@
 %>
 <%@ page import="DAO.ProductosDAO" %>
 <%@ page import="DAO.MarcasDAO" %>
+<%@ page import="DAO.ComentariosDAO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Modelos.Producto" %>
 <%@ page import="Modelos.Marca" %>
-
+<%@ page import="Modelos.Usuario" %>
 <% 
+    Usuario u = (Usuario) session.getAttribute("usuario");
+
     int id = Integer.parseInt(request.getParameter("id"));
 
     MarcasDAO mDAO=new MarcasDAO();
     ProductosDAO produDAO = new ProductosDAO();
-
+    ComentariosDAO comentarioDAO = new ComentariosDAO();
     Producto produ=produDAO.ObtenerProducto(id);
     ArrayList<Producto> productosParecidos = produDAO.ProductosParecidos(produ.getCategoria(),produ.getId());
     Marca marca=mDAO.ObtenerMarca(produ.getMarca());
+
+    int calificacionProm=comentarioDAO.PromedioProducto(produ.getId());
 %>
 <jsp:include page="../Templates/Head.jsp"/> 
 
     <jsp:include page="Components/NavClient.jsp"/>
-    <main>
+    <main class="flex flex-col items-center">
         <section class="mt-[120px]">
             <h2 class=" max-sm:text-2xl max-md:text-4xl md:text-5xl my-10 text-white text-center"><%= produ.getNombre() %></h2>
             <div class="grid items-start md:grid-cols-2 justify-center">
@@ -29,11 +34,9 @@
                     <div class="flex items-center justify-start gap-3">
                         <span class="max-sm:text-base sm:text-base md:text-xl text-white">Calificación:</span>
                         <ul class="flex gap-3 max-sm:text-base sm:text-base md:text-xl">
-                            <li><i class="text-orange-600 fa-solid fa-star"></i></li>
-                            <li><i class="text-orange-600 fa-solid fa-star"></i></li>
-                            <li><i class="text-orange-600 fa-solid fa-star"></i></li>
-                            <li><i class="text-orange-600 fa-solid fa-star"></i></li>
-                            <li><i class="text-orange-600 fa-solid fa-star"></i></li>
+                            <% for(int i=0;i < calificacionProm ; i++ ){ %>
+                                <li><i class="text-orange-600 fa-solid fa-star"></i></li>
+                            <% } %>
                         </ul>
                     </div>
                     <div class="carrito-noti hidden text-3xl text-white absolute top-2 right-3"><i class="fa-solid fa-spinner animate-spin"></i></div>
@@ -59,9 +62,11 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </section>
+        <% if (u!=null && !u.getCorreo().isBlank() ) {  %>
+            <button class="bg-[rgb(255,100,0)] px-5 py-3 text-2xl text-white hover:saturate-200 filter transform duration-300 mx-auto mt-10" data-te-toggle="modal" data-te-target="#ModalComentario" data-te-ripple-init>Agregar un Comentario al <%= produ.getNombre() %></button>
+        <% } %> 
         <section class="mt-[120px] flex flex-col items-center gap-7 justify-center">
             <h2 class="text-5xl text-center text-[rgb(255,100,0)] p-2">Otros Productos parecidos</h2>
             <div class="container flex flex-wrap justify-center items-center gap-5">
@@ -79,6 +84,35 @@
             </div>
         </section>
     </main>
+    <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="ModalComentario" tabindex="-1" aria-labelledby="ModalComentario" aria-hidden="true">
+        <div data-te-modal-dialog-ref class="relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[0px]:m-0 min-[0px]:h-full min-[0px]:max-w-none flex items-center">
+            <div class="relative flex gap-5 items-center max-w-[400px] w-full h-auto flex-col bg-black outline-none border-[rgb(255,100,0)] m-auto border-2 p-2 rounded">
+                <div class="w-full flex flex-shrink-0 items-center justify-between p-2 text-xl text-white">
+                    <h5>Agrega un Comentario  </h5>
+                    <button type="button" class="hover:text-[rgb(255,100,0)] rotate-45 transform duration-300 hover:-rotate-45 text-3xl" data-te-modal-dismiss ><i class='bx bx-cross'></i></i></button>
+                </div>
+                <form action="../ctrlComentarios" method="POST" class="w-full relative flex flex-col items-center justify-center gap-2" autocomplete="off">
+                    <p class="clasificacion">
+                        <input id="radio1" type="radio" name="calificacion" value="5"><!--
+                        --><label for="radio1">★</label><!--
+                        --><input id="radio2" type="radio" name="calificacion" value="4"><!--
+                        --><label for="radio2">★</label><!--
+                        --><input id="radio3" type="radio" name="calificacion" value="3"><!--
+                        --><label for="radio3">★</label><!--
+                        --><input id="radio4" type="radio" name="calificacion" value="2"><!--
+                        --><label for="radio4">★</label><!--
+                        --><input id="radio5" type="radio" name="calificacion" value="1"><!--
+                        --><label for="radio5">★</label>
+                      </p>
+                      <input type="hidden" name="idproducto" value="<%=produ.getId() %>">
+                    <label for="" class="flex flex-col gap-2 text-white">
+                        <textarea name="comentario" id="" cols="24" rows="6" class="bg-transparent w-full outline-none border border-white focus:border-orange-600 p-2 text-white transform duration-300"></textarea>
+                    </label>
+                    <input type="submit" name="Agregar" autocomplete="off" value="Agregar Comentario" class="bg-white text-black w-[300px] cursor-pointer text-xl px-4 py-2 hover:bg-cyan-400 filter transform duration-200">
+                </form>
+            </div>
+        </div>
+    </div>
     <jsp:include page="Components/ModalNav.jsp"/>
     <jsp:include page="Components/ModalCarrito.jsp"/>
     <jsp:include page="Components/ModalBuscador.jsp"/>

@@ -10,10 +10,10 @@
 <jsp:include page="../Templates/Head.jsp"/> 
     <jsp:include page="Components/NavClient.jsp"/>
     <main>
-        <section class="mt-[100px]">
+        <section class="mt-[100px] flex flex-col items-center">
             <h2 class="text-5xl mb-5 text-white px-5">Productos en Descuento</h2>
             <p class="text-xl text-slate-400 px-5 mb-5">Con descuentos tan bajos que te harán cuestionar la realidad.</p>
-            <div class="flex flex-wrap items-center justify-center gap-10 max-sm:px-0 sm:px-10 transition-all duration-300">
+            <div class="flex flex-wrap items-center justify-center gap-10 transition-all duration-300 max-w-[1200px] w-full">
                 <% if(productos.isEmpty()){%>
                 <span class="text-4xl text-white text-center">No hay Productos en Descuento :[</span>
                 <% } else {%>

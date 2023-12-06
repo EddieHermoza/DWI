@@ -57,12 +57,19 @@
                         </div>
                     </div>        
                 </div>
-
                 <div class="flex max-2xl:flex-col 2xl:flex-row justify-center gap-5 max-sm:p-2 sm:p-5">
                     <div class="w-full flex flex-col justify-center items-center bg-neutral-950 rounded-lg p-3">
                         <h3 class="w-full text-3xl text-white text-center">Ventas de cada Mes (<strong id="añoStrong"></strong>)</h3>
                         <div class="w-full flex justify-center">
                             <canvas class="w-full" id="chartVentasMes"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex max-2xl:flex-col 2xl:flex-row justify-center gap-5 max-sm:p-2 sm:p-5">
+                    <div class="w-full flex flex-col justify-center items-center bg-neutral-950 rounded-lg p-3">
+                        <h3 class="w-full text-3xl text-white text-center">Ventas Por Categoria</h3>
+                        <div class="w-full flex justify-center">
+                            <canvas class="w-full" id="chartVentaCategorias"></canvas>
                         </div>
                     </div>
                     <div class="w-full flex flex-col justify-center items-center bg-neutral-950 rounded-lg p-3">
@@ -80,6 +87,8 @@
                             <canvas class="w-full" id="chartInventario"></canvas>
                         </div>
                     </div>
+                </div>
+                <div class="flex max-2xl:flex-col 2xl:flex-row justify-center gap-5 max-sm:p-2 sm:p-5">
                     <div class="w-full flex flex-col justify-center items-center bg-neutral-950 rounded-lg p-3">
                         <h3 class="w-full text-3xl text-white text-center">Preferencia de Metodos de Pago</h3>
                         <div class="w-full flex justify-center">
@@ -400,4 +409,76 @@
     }
     ActivarGrafica4();
   </script>
+    <script>
+        async function ActivarGrafica5() {
+            try {
+                const formData = new FormData();
+                formData.append('grafica', 'chartVentaCategorias'); 
+    
+                const response = await fetch('../ctrlGraficas', {
+                    method: 'POST', 
+                    body: formData,
+                });
+    
+                if (response.ok) {
+                const data = await response.json();
+                console.log(response);
+                const chartVentaCategorias = document.getElementById('chartVentaCategorias');
+                const labelsVentas = data.labels; 
+                const dataVentas = data.data;
+    
+                new Chart(chartVentaCategorias, {
+                    type: 'bar',
+                    data: {
+                        labels: labelsVentas,
+                        datasets: [{
+                            label: '$/ (DOLARES)',
+                            data: dataVentas,
+                            backgroundColor:[
+                            'rgb(255, 255, 0)'
+                            ],
+                            borderColor: [
+                            'rgb(255, 255, 0)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: 'white', 
+                                },
+                            },
+                        },
+                        scales: {
+                            x:{
+                                grid:{
+                                    color:'black'
+                                },
+                                ticks: {
+                                    color: 'white', 
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'white'
+                                },
+                                ticks: {
+                                    color: 'white', 
+                                }
+                            }
+                        }
+                    }
+                });      
+                } else {
+                console.error('Error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        ActivarGrafica5();
+      </script>
 

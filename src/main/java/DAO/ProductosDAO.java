@@ -415,13 +415,22 @@ public class ProductosDAO extends Conexion{
             ps=con.prepareStatement("SELECT count(*) AS cantidad FROM Productos");
             rs=ps.executeQuery(); 
             if (rs.next()) {
-                cantidad=Integer.parseInt(rs.getString("cantidad"));
+                String cantidadString = rs.getString("cantidad");
+
+                if (cantidadString != null && !cantidadString.isBlank()) {
+                    cantidad = Integer.parseInt(cantidadString);
+                }
+            
+            } else {
+                return cantidad;
             }
         } catch (SQLException e) {
             System.out.println(e);
         }
         return cantidad;
     }
+    
+    
     
     public ArrayList<Producto> ProductosParecidos(int id_Categoria,int id_producto) {
         ArrayList<Producto> productos = new ArrayList<>();
@@ -445,7 +454,6 @@ public class ProductosDAO extends Conexion{
                     producto.setCantidad(rs.getInt("cantidad"));
                     producto.setDescuento(rs.getDouble("descuento"));
                     producto.setEstado(rs.getString("estado"));
-                    producto.setEspecificaciones(rs.getString("especificaciones"));
                     productos.add(producto);
                 }
              return productos;
@@ -493,7 +501,6 @@ public class ProductosDAO extends Conexion{
                     producto.setCantidad(rs.getInt("cantidad"));
                     producto.setDescuento(rs.getDouble("descuento"));
                     producto.setEstado(rs.getString("estado"));
-                    producto.setEspecificaciones(rs.getString("especificaciones"));
                     productos.add(producto);
                 }
              return productos;
@@ -532,7 +539,6 @@ public class ProductosDAO extends Conexion{
                     producto.setCantidad(rs.getInt("cantidad"));
                     producto.setDescuento(rs.getDouble("descuento"));
                     producto.setEstado(rs.getString("estado"));
-                    producto.setEspecificaciones(rs.getString("especificaciones"));
                     productos.add(producto);
                 }
              return productos;
@@ -550,4 +556,31 @@ public class ProductosDAO extends Conexion{
             }
         }
     }
+    
+    public ArrayList<Producto> buscarProductos(String query){
+        ArrayList<Producto> productos = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConnection();
+        try {
+             ps = con.prepareStatement("SELECT * FROM Productos WHERE estado = 'habilitado' AND cantidad > 0 AND id LIKE ? LIMIT 5");
+             ps.setString(1, "%" + query + "%");
+             rs = ps.executeQuery();
+
+             while (rs.next()) {
+                 Producto p = new Producto();
+                 p.setId(rs.getInt("id"));
+                 productos.add(p);
+             }
+             return productos;
+
+        } catch (SQLException e) {
+            Logger.getLogger(ProductosDAO.class.getName()).log(Level.SEVERE, null, "Error: " + e); 
+            return productos;
+        }
+          
+    }
 }
+    
+
+

@@ -183,4 +183,60 @@ public class VentasDAO extends Conexion{
         return monto;
     }
     
+    public int CantidadVentasCliente(int  id){
+        int cantidad=0;
+        PreparedStatement ps=null;
+        Connection con=getConnection();
+        ResultSet rs=null;
+        try {
+            ps=con.prepareStatement("SELECT count(*) AS cantidad FROM Ventas WHERE cliente_id=?");
+            ps.setInt(1, id);
+            rs=ps.executeQuery(); 
+            if (rs.next()) {
+                String cantidadString = rs.getString("cantidad");
+
+                if (cantidadString != null && !cantidadString.isBlank()) {
+                    cantidad = Integer.parseInt(cantidadString);
+                }
+            
+            } else {
+                return cantidad;
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(VentasDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e);
+            System.out.println(e);
+        }
+      return cantidad;
+    }
+    
+        public ArrayList<Venta> ListarVentasCLiente(int id) {
+        ArrayList<Venta> ventasList = new ArrayList<>();
+        PreparedStatement ps = null;
+        ResultSet rs=null;
+        Connection con = getConnection();
+        try {
+             ps = con.prepareStatement("SELECT * FROM Ventas WHERE cliente_id=?");
+             ps.setInt(1, id);
+             rs = ps.executeQuery();
+                while (rs.next()) {
+                    Venta v = new Venta();
+                    v.setId(rs.getInt("id"));
+                    v.setTransaccion(rs.getString("transaccion"));
+                    v.setFecha(rs.getString("fecha"));
+                    v.setHora(rs.getString("hora"));
+                    v.setMonto(rs.getDouble("monto"));
+                    v.setDescuento(rs.getDouble("descuento_total"));
+                    v.setMetodo(rs.getString("metodo_pago"));
+                    ventasList.add(v);
+                }
+             return ventasList;
+             
+        } catch (SQLException e) {
+            
+            Logger.getLogger(VentasDAO.class.getName()).log(Level.SEVERE, null, "Error: "+e); 
+            return ventasList;
+            
+        } 
+    }
+    
 }

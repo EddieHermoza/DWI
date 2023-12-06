@@ -2,10 +2,12 @@ Controlador\ctrlProductos.class
 Modelos\Usuario.class
 Modelos\Producto.class
 DAO\DetalleVentasDAO.class
+Modelos\Comentario.class
 Controlador\ctrlCarritoModal.class
 Modelos\Cliente.class
 Controlador\ctrlMarcas.class
 Modelos\Marca.class
+Controlador\ctrlCliente.class
 DAO\Conexion.class
 DAO\ProductosDAO.class
 Utilidades\Funciones.class
@@ -20,8 +22,10 @@ DAO\UsuariosDAO.class
 Controlador\ctrlCarrito.class
 Controlador\ctrlUsuarios.class
 Modelos\Carro.class
+DAO\ComentariosDAO.class
 Modelos\Venta.class
 DAO\MarcasDAO.class
+Controlador\ctrlComentarios.class
 Modelos\Categoria.class
 Controlador\ctrlGraficas.class
 Modelos\Venta_Detalle.class

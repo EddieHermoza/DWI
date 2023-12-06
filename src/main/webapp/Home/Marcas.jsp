@@ -23,11 +23,11 @@
                 <jsp:param name="url" value="<%= marca.getBannerRef() %>" />
             </jsp:include>
             <section class="h-full relative">
-                <div class="flex sticky z-10 top-[40px] flex-col bg-black items-center h-[20vh] space-y-3 justify-center w-full">
+                <div class="flex sticky z-10 top-[40px] flex-col bg-black items-center h-[20vh] space-y-3 justify-center w-full border-b">
                     <h2 class="max-sm:text-3xl sm:text-5xl text-white text-center"><%= marca.getNombre() %></h2>
                     <p class="max-sm:text-xs sm:text-base md:text-xl text-slate-400 text-center  md:w-5/6 lg:w-3/5"><%= marca.getDesc() %></p>
                 </div>
-                <div class="flex relative justify-center w-full">
+                <div class="flex relative justify-center w-full pt-20">
                     <div class="bg-black relative grid max-md:grid-cols-1 md:grid-cols-2 gap-2 xl:grid-cols-3 grid-flow-row justify-center max-lg:w-full lg:w-[70%] min-h-screen"">
                         <% if(productos.isEmpty()){ %>
                             <span class="max-lg:text-3xl lg:text-5xl sm:col-span-2 xl:col-span-3 text-center text-white p-2">No hay Productos disponibles de la Marca <%= marca.getNombre() %> :[</span>

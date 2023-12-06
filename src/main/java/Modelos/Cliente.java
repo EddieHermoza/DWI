@@ -34,7 +34,10 @@ public class Cliente extends Usuario {
         this.telefono = telefono;
     }
 
-    
+    public boolean TelefonoVacio() {
+        return
+        (telefono == null || telefono.isBlank());
+    }
     
     
 }

@@ -1,0 +1,85 @@
+@options
+@packages
+-classpath
+'C:/Users/Administrator/.m2/repository/jakarta/platform/jakarta.jakartaee-api/10.0.0/jakarta.jakartaee-api-10.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/platform/jakarta.jakartaee-web-api/10.0.0/jakarta.jakartaee-web-api-10.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/servlet/jsp/jakarta.servlet.jsp-api/3.1.0/jakarta.servlet.jsp-api-3.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/el/jakarta.el-api/5.0.1/jakarta.el-api-5.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/3.0.0/jakarta.servlet.jsp.jstl-api-3.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/faces/jakarta.faces-api/4.0.1/jakarta.faces-api-4.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/websocket/jakarta.websocket-api/2.1.0/jakarta.websocket-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/websocket/jakarta.websocket-client-api/2.1.0/jakarta.websocket-client-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/json/jakarta.json-api/2.1.0/jakarta.json-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/json/bind/jakarta.json.bind-api/3.0.0/jakarta.json.bind-api-3.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/Administrator/.m2/repository/jakarta/ejb/jakarta.ejb-api/4.0.1/jakarta.ejb-api-4.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar;C:/Users/Administrator/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/2.1.0/jakarta.interceptor-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-api/4.0.1/jakarta.enterprise.cdi-api-4.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/enterprise/jakarta.enterprise.lang-model/4.0.1/jakarta.enterprise.lang-model-4.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar;C:/Users/Administrator/.m2/repository/jakarta/authentication/jakarta.authentication-api/3.0.0/jakarta.authentication-api-3.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/security/enterprise/jakarta.security.enterprise-api/3.0.0/jakarta.security.enterprise-api-3.0.0.jar;C:/Users/Administrator/.m2/repository/jakarta/jms/jakarta.jms-api/3.1.0/jakarta.jms-api-3.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.0/jakarta.mail-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/resource/jakarta.resource-api/2.1.0/jakarta.resource-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/authorization/jakarta.authorization-api/2.1.0/jakarta.authorization-api-2.1.0.jar;C:/Users/Administrator/.m2/repository/jakarta/batch/jakarta.batch-api/2.1.1/jakarta.batch-api-2.1.1.jar;C:/Users/Administrator/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar;C:/Users/Administrator/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar;C:/Users/Administrator/.m2/repository/org/json/json/20210307/json-20210307.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'C:/Users/Administrator/Documents/NetBeansProjects/Proyecto_DWI/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Administrator/Documents/NetBeansProjects/Proyecto_DWI/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Proyecto_DWI-1.0-SNAPSHOT 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/Administrator/Documents/NetBeansProjects/Proyecto_DWI/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Proyecto_DWI-1.0-SNAPSHOT 1.0-SNAPSHOT API'
+Controlador
+DAO
+Modelos
+Utilidades
+C:\Users\Administrator\.m2\repository\jakarta\platform\jakarta.jakartaee-api\10.0.0\jakarta.jakartaee-api-10.0.0.jar = 1692153762562
+C:\Users\Administrator\.m2\repository\jakarta\platform\jakarta.jakartaee-web-api\10.0.0\jakarta.jakartaee-web-api-10.0.0.jar = 1692153766393
+C:\Users\Administrator\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar = 1692153762694
+C:\Users\Administrator\.m2\repository\jakarta\servlet\jsp\jakarta.servlet.jsp-api\3.1.0\jakarta.servlet.jsp-api-3.1.0.jar = 1692153762637
+C:\Users\Administrator\.m2\repository\jakarta\el\jakarta.el-api\5.0.1\jakarta.el-api-5.0.1.jar = 1692153762625
+C:\Users\Administrator\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\3.0.0\jakarta.servlet.jsp.jstl-api-3.0.0.jar = 1692153762614
+C:\Users\Administrator\.m2\repository\jakarta\faces\jakarta.faces-api\4.0.1\jakarta.faces-api-4.0.1.jar = 1692153762661
+C:\Users\Administrator\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.1.0\jakarta.ws.rs-api-3.1.0.jar = 1692153762641
+C:\Users\Administrator\.m2\repository\jakarta\websocket\jakarta.websocket-api\2.1.0\jakarta.websocket-api-2.1.0.jar = 1692153762650
+C:\Users\Administrator\.m2\repository\jakarta\websocket\jakarta.websocket-client-api\2.1.0\jakarta.websocket-client-api-2.1.0.jar = 1692153762655
+C:\Users\Administrator\.m2\repository\jakarta\json\jakarta.json-api\2.1.0\jakarta.json-api-2.1.0.jar = 1692153762670
+C:\Users\Administrator\.m2\repository\jakarta\json\bind\jakarta.json.bind-api\3.0.0\jakarta.json.bind-api-3.0.0.jar = 1692153762673
+C:\Users\Administrator\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1692153762684
+C:\Users\Administrator\.m2\repository\jakarta\ejb\jakarta.ejb-api\4.0.1\jakarta.ejb-api-4.0.1.jar = 1692153762691
+C:\Users\Administrator\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar = 1692153762769
+C:\Users\Administrator\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar = 1692153762733
+C:\Users\Administrator\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar = 1692153762811
+C:\Users\Administrator\.m2\repository\jakarta\interceptor\jakarta.interceptor-api\2.1.0\jakarta.interceptor-api-2.1.0.jar = 1692153762709
+C:\Users\Administrator\.m2\repository\jakarta\enterprise\jakarta.enterprise.cdi-api\4.0.1\jakarta.enterprise.cdi-api-4.0.1.jar = 1692153762725
+C:\Users\Administrator\.m2\repository\jakarta\enterprise\jakarta.enterprise.lang-model\4.0.1\jakarta.enterprise.lang-model-4.0.1.jar = 1692153762755
+C:\Users\Administrator\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar = 1692153762756
+C:\Users\Administrator\.m2\repository\jakarta\authentication\jakarta.authentication-api\3.0.0\jakarta.authentication-api-3.0.0.jar = 1692153762821
+C:\Users\Administrator\.m2\repository\jakarta\security\enterprise\jakarta.security.enterprise-api\3.0.0\jakarta.security.enterprise-api-3.0.0.jar = 1692153762779
+C:\Users\Administrator\.m2\repository\jakarta\jms\jakarta.jms-api\3.1.0\jakarta.jms-api-3.1.0.jar = 1692153762821
+C:\Users\Administrator\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar = 1692153762904
+C:\Users\Administrator\.m2\repository\jakarta\mail\jakarta.mail-api\2.1.0\jakarta.mail-api-2.1.0.jar = 1692153764045
+C:\Users\Administrator\.m2\repository\jakarta\resource\jakarta.resource-api\2.1.0\jakarta.resource-api-2.1.0.jar = 1692153763175
+C:\Users\Administrator\.m2\repository\jakarta\authorization\jakarta.authorization-api\2.1.0\jakarta.authorization-api-2.1.0.jar = 1692153762856
+C:\Users\Administrator\.m2\repository\jakarta\batch\jakarta.batch-api\2.1.1\jakarta.batch-api-2.1.1.jar = 1692153762919
+C:\Users\Administrator\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar = 1697255940969
+C:\Users\Administrator\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar = 1697255940715
+C:\Users\Administrator\.m2\repository\org\json\json\20210307\json-20210307.jar = 1698213450509
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\src\main\java = 1698645805174
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\allclasses-index.html = 1701859459288
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\allpackages-index.html = 1701859459290
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\copy.svg = 1701859459368
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\element-list = 1701859459029
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\help-doc.html = 1701859459361
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\index-all.html = 1701859459342
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\index.html = 1701859459264
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\member-search-index.js = 1701859459297
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\module-search-index.js = 1701859459291
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\overview-summary.html = 1701859459348
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\overview-tree.html = 1701859459259
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\package-search-index.js = 1701859459293
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\script.js = 1701859459367
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\search-page.js = 1701859459373
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\search.html = 1701859459345
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\search.js = 1701859459370
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\serialized-form.html = 1701859459104
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\stylesheet.css = 1701859459364
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\tag-search-index.js = 1701859459299
+C:\Users\Administrator\Documents\NetBeansProjects\Proyecto_DWI\target\site\apidocs\type-search-index.js = 1701859459295

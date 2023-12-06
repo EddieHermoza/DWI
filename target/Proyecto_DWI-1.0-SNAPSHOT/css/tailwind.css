@@ -29,7 +29,35 @@
         max-height: 6em; 
     }
 }
+.clasificacion p {
+  text-align: center;
+}
 
+.clasificacion  label {
+  font-size: 32px;
+}
+
+.clasificacion input[type="radio"] {
+  display: none;
+}
+
+.clasificacion label {
+  color: rgb(242, 240, 240);
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.clasificacion label:hover,
+.clasificacion label:hover ~ label {
+  color: rgb(255, 100, 0);
+}
+
+.clasificacion input[type="radio"]:checked ~ label {
+  color: rgb(255, 100, 0);
+}
 
 .file-select {
   position: relative;
