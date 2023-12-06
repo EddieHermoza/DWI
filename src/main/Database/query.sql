@@ -45,7 +45,7 @@ producto_id bigint NOT NULL,
 cliente_id bigint NOT NULL,
 comentario text NOT NULL,
 calificacion int not null,
-fecha date not null,
+fecha text not null,
 estado varchar(50) not null
 );
 
@@ -110,10 +110,10 @@ ADD CONSTRAINT FK_coment_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(us
 
 
 ALTER TABLE ventas
-ADD CONSTRAINT FK_ventas_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(usuario_id) ON DELETE CASCADE;
+ADD CONSTRAINT FK_ventas_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(usuario_id) ON DELETE SET NULL;
 
 ALTER TABLE venta_detalle
-ADD CONSTRAINT FK_vDetalle_producto FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
+ADD CONSTRAINT FK_vDetalle_producto FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE SET NULL,
 ADD CONSTRAINT FK_vDetalle_venta FOREIGN KEY (venta_id) REFERENCES ventas(id) ON DELETE CASCADE;
 
 ALTER TABLE clientes
@@ -121,6 +121,6 @@ ADD CONSTRAINT FK_clie_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) 
 
 CREATE UNIQUE INDEX idx_email_unico ON usuarios (email);
 
-
 INSERT INTO Usuarios(nombres,apellidos,email,contraseña,rol) values('Admin Nombres','Admin Apellidos','admin@paragon.com','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','administrador');
-  
+ 
+
